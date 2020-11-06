@@ -12,7 +12,7 @@ public class DictionaryDetailFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static DictionaryDetailFragment newInstance() {
+    public static DictionaryDetailFragment newInstance(long mWordID, String mFrom, String mTo) {
         DictionaryDetailFragment fragment = new DictionaryDetailFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

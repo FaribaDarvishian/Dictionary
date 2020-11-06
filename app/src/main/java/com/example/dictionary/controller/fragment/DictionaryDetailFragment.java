@@ -1,4 +1,4 @@
-package com.example.dictionary.fragment;
+package com.example.dictionary.controller.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -43,7 +43,7 @@ public class DictionaryDetailFragment extends Fragment {
     }
 
     public static DictionaryDetailFragment newInstance(long wordId, String from, String to) {
-        com.example.dictionary.fragment.DictionaryDetailFragment fragment = new DictionaryDetailFragment();
+        DictionaryDetailFragment fragment = new DictionaryDetailFragment();
         Bundle args = new Bundle();
         args.putLong(KEY_VALUE_WORD_ID, wordId);
         args.putString(KEY_VALUE_FROM, from);

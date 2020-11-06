@@ -1,4 +1,4 @@
-package com.example.dictionary.fragment;
+package com.example.dictionary.controller.fragment;
 
 import android.app.Activity;
 import android.app.AlertDialog;

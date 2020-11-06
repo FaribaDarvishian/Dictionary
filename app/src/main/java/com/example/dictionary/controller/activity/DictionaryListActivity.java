@@ -1,11 +1,11 @@
-package com.example.dictionary.activity;
+package com.example.dictionary.controller.activity;
 
 import android.content.Context;
 import android.content.Intent;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.dictionary.fragment.DictionaryListFragment;
+import com.example.dictionary.controller.fragment.DictionaryListFragment;
 
 public class DictionaryListActivity extends SingleFragmentActivity {
 
