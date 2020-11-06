@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Dictionary</string>
+    <string name="translate_from">Translate From</string>
+    <string name="translate_to">Translate To</string>
+    <string name="search">Search</string>
+    <string name="insert">insert</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
+    <string name="persian">Persian</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="share_word"> The meaning of %1$s in %2$s is %3$s.
+    </string>
+    <string name="dictionary_sharing_massage">Dictionary sharing Message</string>
+    <string name="add_new_word_to_dictionary">Add new word to dictionary:</string>
+    <string name="edit_word">Edit word:</string>
+    <string name="delete_word">Delete word:</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="language">Language</string>
+    <string name="select_language">Select Language:</string>
 </resources>
