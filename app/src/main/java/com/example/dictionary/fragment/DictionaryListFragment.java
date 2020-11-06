@@ -16,11 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dictionary.R;
 import com.example.dictionary.model.DictionaryWord;
 
-import java.util.List;
-
 public class DictionaryListFragment extends Fragment {
     private RecyclerView mRecyclerView;
-
+    private IRepository mRepository;
+    private List<DictionaryWord> mDictionaryWords;
     private DictionaryAdapter mDictionaryAdapter;
 
     public DictionaryListFragment() {
@@ -37,6 +36,7 @@ public class DictionaryListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mRepository = DictionaryDBRepository.getInstance(getActivity());
 
     }
 
@@ -55,17 +55,37 @@ public class DictionaryListFragment extends Fragment {
     }
 
     private void initView(View view) {
-
+        exposedDropdownMenus(view, R.id.filled_exposed_dropdown_from);
+        exposedDropdownMenus(view, R.id.filled_exposed_dropdown_to);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         updateUI();
     }
 
     public void updateUI() {
-
+        mDictionaryWords = mRepository.getWords();
+        if (mDictionaryAdapter == null) {
+            mDictionaryAdapter = new DictionaryAdapter(mDictionaryWords);
+            mRecyclerView.setAdapter(mDictionaryAdapter);
+        } else {
+            mDictionaryAdapter.setDictionaryWords(mDictionaryWords);
+            mDictionaryAdapter.notifyDataSetChanged();
+        }
 
     }
 
+    private void exposedDropdownMenus(View view, int filledExposedDropdown) {
+        String[] COUNTRIES = new String[]{"Arabic", "English", "French", "Persian"};
 
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(
+                        getContext(),
+                        R.layout.dropdown_menu_popup_item,
+                        COUNTRIES);
+
+        AutoCompleteTextView editTextFilledExposedDropdown =
+                view.findViewById(filledExposedDropdown);
+        editTextFilledExposedDropdown.setAdapter(adapter);
+    }
 
     private class DictionaryHolder extends RecyclerView.ViewHolder {
 
@@ -78,6 +98,7 @@ public class DictionaryListFragment extends Fragment {
 
             mTextViewWord = itemView.findViewById(R.id.row_item_textView_word);
             mTextViewMeaning = itemView.findViewById(R.id.row_item_textView_meaning);
+
 
         }
 
