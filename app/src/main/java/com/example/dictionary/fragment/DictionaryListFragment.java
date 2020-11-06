@@ -15,10 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dictionary.R;
 import com.example.dictionary.model.DictionaryWord;
+import com.example.dictionary.repository.DictionaryDBRepository;
+
+import java.util.List;
 
 public class DictionaryListFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private IRepository mRepository;
+    private DictionaryDBRepository mRepository;
     private List<DictionaryWord> mDictionaryWords;
     private DictionaryAdapter mDictionaryAdapter;
 
